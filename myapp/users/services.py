@@ -54,6 +54,7 @@ class UserService(collectionUser):
             if not token_email:
                 return {"success": False, "error": "Failed to create email token."}
             send_email = send_verify_email(request_data['email'],token_email)
+            print("send_email",send_email)
             if not send_email:              
                 return {"success": False, "error": "Failed to send verification email."}
             result = self.user_collection.insert_one(request_data)
