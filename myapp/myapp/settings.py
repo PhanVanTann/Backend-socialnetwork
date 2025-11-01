@@ -54,13 +54,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders'
     'rest_framework',  
     'cloudinary',
     'channels',
     'cloudinary_storage',
     'user_auth',
     'users',
-     
     'post',
     'chat',
     'friend',
@@ -160,6 +160,7 @@ CORS_ALLOW_ALL_ORIGINS = False  # KHÔNG dùng True nếu set CORS_ALLOWED_ORIGI
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000", 
+     "https://socialnetwork-su0z.onrender.com",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
