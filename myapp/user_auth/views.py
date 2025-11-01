@@ -27,7 +27,7 @@ class EmailView(APIView):
             user = email_service.verify_email_token(email)
 
             if user["success"]:
-                return HttpResponseRedirect("http://localhost:3000/login/?isVerified=true")
+                return HttpResponseRedirect("https://socialnetwork-su0z.onrender.com/login?isVerified=true")
             else:
                 return JsonResponse({"success":False,"error": "unverified Email"}, status=400)
 

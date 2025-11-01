@@ -4,7 +4,7 @@ from django.conf import settings
 
 def send_verify_email(email,token):
     try:
-        link = f"http://localhost:8000/auth/verifyEmail/?token={token}"
+        link = f"https://backend-socialnetwork-1cmf.onrender.com/auth/verifyEmail/?token={token}"
         subject = "Verify your email"
         message = ""
         html_message = f"""
