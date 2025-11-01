@@ -25,7 +25,8 @@ def send_verify_email(email,token):
             message,
             settings.EMAIL_HOST_USER,
             [email],
-            html_message=html_message
+            html_message=html_message,
+            fail_silently=False,
         )
         return True
     except Exception as e:

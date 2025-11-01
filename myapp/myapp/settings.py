@@ -40,6 +40,7 @@ API_SECRET = config('API_SECRET')
 CLOUD_NAME = config('CLOUD_NAME')
 
 REDIS_URL = config('REDIS_URL')
+DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL", default=EMAIL_HOST_USER)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
