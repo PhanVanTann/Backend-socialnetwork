@@ -74,7 +74,7 @@ def create_cookie(access_token,refresh_token):
         key='refresh_token',
         value=refresh_token,
         httponly=True,
-        secure=False, 
+        secure=True, 
         samesite=None,
         #domain=None,
         max_age=2*24*3600
@@ -82,11 +82,10 @@ def create_cookie(access_token,refresh_token):
     response.set_cookie(
         key='access_token',
         value=access_token,
-        secure=False,  # tạm để False nếu đang test local
-        samesite="Lax",
+        secure=True,  # tạm để False nếu đang test local
         httponly=True,      
         #secure=True,       
-        #samesite=None,  
+        samesite=None,  
         #domain=None,
         max_age=60*60     
         ) 
