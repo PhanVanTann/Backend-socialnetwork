@@ -38,6 +38,8 @@ GOOGLE_CLIENT_SECRET = config('GOOGLE_CLIENT_SECRET')
 API_KEY = config('API_KEY')
 API_SECRET = config('API_SECRET')
 CLOUD_NAME = config('CLOUD_NAME')
+
+REDIS_URL = config('REDIS_URL')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -184,6 +186,6 @@ CHANNEL_LAYERS = {
     "default": {
         # "BACKEND": "channels.layers.InMemoryChannelLayer",
         "BACKEND": "channels_redis.core.RedisChannelLayer",
-        "CONFIG": {"hosts": [("127.0.0.1", 6379)]},
+        "CONFIG": {"hosts": [REDIS_URL]},
     }
 }
