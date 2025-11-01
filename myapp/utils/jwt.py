@@ -75,18 +75,17 @@ def create_cookie(access_token,refresh_token):
         value=refresh_token,
         httponly=True,
         secure=True, 
-        samesite=None,
-        #domain=None,
+        samesite="None",
+        domain="backend-socialnetwork-1cmf.onrender.com",
         max_age=2*24*3600
             )
     response.set_cookie(
         key='access_token',
         value=access_token,
-        secure=True,  # tạm để False nếu đang test local
         httponly=True,      
-        #secure=True,       
-        samesite=None,  
-        #domain=None,
+        secure=True,       
+        samesite="None",  
+        domain="backend-socialnetwork-1cmf.onrender.com",
         max_age=60*60     
         ) 
     return response
