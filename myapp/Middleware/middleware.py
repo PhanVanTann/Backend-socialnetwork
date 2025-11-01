@@ -19,7 +19,7 @@ class Middleware:
             }
     def __call__(self,request, *args, **kwds):
         path = request.path
-        print(path)
+        print("path",path)
         for rule_path,allowed_methods in self.rules:
             if path ==rule_path : 
                 if allowed_methods is None:
@@ -28,7 +28,7 @@ class Middleware:
                 if request.method in allowed_methods:
                      return self.get_response(request)
         token = request.COOKIES.get("access_token")
-        print(token)
+        print("token",token)
         if not token:
             return JsonResponse({"success": False, "message": "Thiếu token"}, status=401)
         decode = decode_token(token) 

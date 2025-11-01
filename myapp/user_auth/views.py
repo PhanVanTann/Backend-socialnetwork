@@ -105,8 +105,8 @@ class GoogleLoginView(APIView):
                 "access_token":access_token, 
                 "role": response['role'],
             }, status=200)
-            response.set_cookie("access_token", access_token, httponly=True, secure=False, samesite="Lax", max_age=3600)
-            response.set_cookie("refresh_token", refresh_token, httponly=True, secure=False, samesite="Lax", max_age=7*24*3600)
+            response.set_cookie("access_token", access_token, httponly=True, secure=True, samesite="None", max_age=3600)
+            response.set_cookie("refresh_token", refresh_token, httponly=True, secure=True, samesite="None", max_age=7*24*3600)
             return response
         
         return JsonResponse({"error": "Invalid request"}, status=400)   
