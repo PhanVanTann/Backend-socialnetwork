@@ -96,7 +96,8 @@ TEMPLATES = [
         },
     },
 ]
-
+SECURE_CROSS_ORIGIN_OPENER_POLICY = "same-origin-allow-popups" 
+SECURE_CROSS_ORIGIN_EMBEDDER_POLICY = None
 WSGI_APPLICATION = 'myapp.wsgi.application'
 ASGI_APPLICATION = "myapp.asgi.application" 
 
