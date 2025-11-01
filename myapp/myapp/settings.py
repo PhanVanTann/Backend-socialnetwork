@@ -162,6 +162,13 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000", 
      "https://socialnetwork-su0z.onrender.com",
 ]
+CORS_ALLOW_HEADERS = [
+    "content-type",
+    "authorization",
+]
+CSRF_TRUSTED_ORIGINS = [
+    "https://socialnetwork-su0z.onrender.com",
+]
 
 CORS_ALLOW_CREDENTIALS = True
 CSRF_COOKIE_SECURE = True 
