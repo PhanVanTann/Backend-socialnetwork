@@ -60,7 +60,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'user_auth',
     'users',
-    'myapp', 
+     
     'post',
     'chat',
     'friend',
@@ -173,8 +173,8 @@ cloudinary.config(
 )
 CHANNEL_LAYERS = {
     "default": {
-        "BACKEND": "channels.layers.InMemoryChannelLayer",
-        # "BACKEND": "channels_redis.core.RedisChannelLayer",
-        # "CONFIG": {"hosts": [("127.0.0.1", 6379)]},
+        # "BACKEND": "channels.layers.InMemoryChannelLayer",
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {"hosts": [("127.0.0.1", 6379)]},
     }
 }
