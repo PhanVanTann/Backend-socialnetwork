@@ -189,7 +189,7 @@ class AuthServicer(collection):
         try:
                 decode_ref = decode_token(refresh_token)
                 if decode_ref.get('error'):
-                    return {"success":False,"error":decode_ref['error']}
+                    return {"success":False,"message":decode_ref['error']}
                 secction = self.session_collection.find_one({"user_id":decode_ref["user_id"],"Refresh_Token":refresh_token})
                 if not secction:
                     return {"success":False,"message":"Khoong tìm thấy phiên đăng nhập"}

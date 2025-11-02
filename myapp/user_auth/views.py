@@ -55,8 +55,8 @@ class LoginView(APIView):
                 "access_token":access_token, 
                 "role": login_response['role'],
             }, status=200)
-            response.set_cookie("access_token", access_token, httponly=True,secure=True, samesite="None",domain="backend-socialnetwork-1cmf.onrender.com", max_age=3600)
-            response.set_cookie("refresh_token", refresh_token, httponly=True,secure=True, samesite="None",domain="backend-socialnetwork-1cmf.onrender.com", max_age=7*24*3600)
+            response.set_cookie("access_token", access_token, httponly=True,secure=True, samesite="None",domain=".onrender.com", max_age=3600)
+            response.set_cookie("refresh_token", refresh_token, httponly=True,secure=True, samesite="None",domain=".onrender.com", max_age=7*24*3600)
             return response
         else:
             return JsonResponse({"error": login_response['message']}, status=401)
@@ -105,8 +105,8 @@ class GoogleLoginView(APIView):
                 "access_token":access_token, 
                 "role": response['role'],
             }, status=200)
-            response.set_cookie("access_token", access_token, httponly=True, secure=True, samesite="None",domain="backend-socialnetwork-1cmf.onrender.com", max_age=3600)
-            response.set_cookie("refresh_token", refresh_token, httponly=True, secure=True, samesite="None",domain="backend-socialnetwork-1cmf.onrender.com", max_age=7*24*3600)
+            response.set_cookie("access_token", access_token, httponly=True, secure=True, samesite="None",domain=".onrender.com", max_age=3600)
+            response.set_cookie("refresh_token", refresh_token, httponly=True, secure=True, samesite="None",domain=".onrender.com", max_age=7*24*3600)
             return response
         
         return JsonResponse({"error": "Invalid request"}, status=400)   
