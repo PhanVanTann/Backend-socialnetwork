@@ -1,12 +1,10 @@
 from django.core.mail import send_mail
 from django.conf import settings
-import requests
 
 
 def send_verify_email(email,token):
     try:
-        print("Sending verification email...",email)
-        link = f"https://backend-socialnetwork-1cmf.onrender.com/auth/verifyEmail/?token={token}"
+        link = f"http://localhost:8000/auth/verifyEmail/?token={token}"
         subject = "Verify your email"
         message = ""
         html_message = f"""
@@ -21,21 +19,13 @@ def send_verify_email(email,token):
             <p>Thanks,<br/>Your Website Team</p>
         </div>
         """
-        url = "https://api.brevo.com/v3/smtp/email"
-        payload = {
-        "sender": {"email": settings.DEFAULT_FROM_EMAIL},
-        "to": [{"email": email}],
-        "subject": subject,
-        "htmlContent": html_message
-        }
-        headers = {
-        "accept": "application/json",
-        "content-type": "application/json",
-        "api-key": settings.BREVO_API_KEY  # đặt trong env
-            }
-        
-        r = requests.post(url, json=payload, headers=headers)
-        print("📤 Brevo API response:", r.status_code, r.text)
+        send_mail(
+            subject,
+            message,
+            settings.EMAIL_HOST_USER,
+            [email],
+            html_message=html_message
+        )
         return True
     except Exception as e:
         print(f"Error sending verification email: {e}")
