@@ -105,7 +105,11 @@ SECURE_CROSS_ORIGIN_OPENER_POLICY = "same-origin-allow-popups"
 SECURE_CROSS_ORIGIN_EMBEDDER_POLICY = None
 WSGI_APPLICATION = 'myapp.wsgi.application'
 ASGI_APPLICATION = "myapp.asgi.application" 
-
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SAMESITE = "None"
+CSRF_COOKIE_SAMESITE = "None"
+CORS_ALLOW_CREDENTIALS = True
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels.layers.InMemoryChannelLayer"
@@ -176,9 +180,8 @@ CSRF_TRUSTED_ORIGINS = [
     "https://socialnetwork-su0z.onrender.com",
 ]
 
-CORS_ALLOW_CREDENTIALS = True
-CSRF_COOKIE_SECURE = True 
-SESSION_COOKIE_SECURE = True
+
+
 
 cloudinary.config(
     cloud_name=CLOUD_NAME,
