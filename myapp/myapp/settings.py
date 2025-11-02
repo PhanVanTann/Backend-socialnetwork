@@ -99,6 +99,8 @@ TEMPLATES = [
         },
     },
 ]
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = False 
 SECURE_CROSS_ORIGIN_OPENER_POLICY = "same-origin-allow-popups" 
 SECURE_CROSS_ORIGIN_EMBEDDER_POLICY = None
 WSGI_APPLICATION = 'myapp.wsgi.application'
