@@ -24,10 +24,26 @@ services:
       - key: PYTHON_VERSION
         value: 3.11.0
       # Secrets — set qua Render Dashboard (không commit giá trị thật)
-      - key: OPENAI_API_KEY
+      - key: MOGO_URL
         sync: false            # sync: false = set thủ công trên dashboard
-      - key: AGENT_API_KEY
-        generateValue: true    # Render tự sinh random value
+      - key: MOGO_DB_NAME
+        sync: false 
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false 
+        - key: BREVO_API_KEY
+        sync: false 
+        - key: GOOGLE_CLIENT_ID
+        sync: false 
+        - key: SECRET_KEY
+        sync: false 
+        - key: API_KEY
+        sync: false 
+        - key: API_SECRET
+        sync: false 
+        - key: CLOUD_NAME
+        sync: false 
+        - key: REDIS_URL
+        sync: false 
     # Disk (nếu agent cần lưu file)
     # disk:
     #   name: agent-data
