@@ -13,10 +13,7 @@ services:
     name: ai-agent
     runtime: python
     region: singapore         # Chọn region gần user nhất
-    plan: free    
-    ipAllowList:
-    - source: 0.0.0.0/0
-      description: allow all            
+    plan: free        
 
     buildCommand: pip install -r app/requirements.txt
     startCommand: daphne -b 0.0.0.0 -p 8000 myapp.asgi:application
@@ -49,9 +46,6 @@ services:
     name: agent-cache
     plan: free
     maxmemoryPolicy: allkeys-lru
-    ipAllowList:
-      - source: 0.0.0.0/0
-        description: allow all
 
 # ============================================================
 # Cách deploy:
