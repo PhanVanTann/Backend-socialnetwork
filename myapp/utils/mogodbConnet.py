@@ -6,7 +6,7 @@ class MongoDBConnection:
     def __init__(self):
         try:
             self.client = MongoClient(MOGO_URL)
-            self.db = self.client.get_database(MOGO_DB_NAME)
+            self.db = self.client(MOGO_DB_NAME)
             print("Connected to MongoDB successfully")
         except Exception as e:
             print(f"Error connecting to MongoDB: {e}")
