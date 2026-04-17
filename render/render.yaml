@@ -19,7 +19,7 @@ services:
       description: allow all            
 
     buildCommand: pip install -r app/requirements.txt
-    startCommand: ./myapp daphne -b 0.0.0.0 -p 8000 myapp.asgi:application
+    startCommand: daphne -b 0.0.0.0 -p 8000 myapp.asgi:application
 
     healthCheckPath: /health   # Render check path này
 
@@ -49,6 +49,9 @@ services:
     name: agent-cache
     plan: free
     maxmemoryPolicy: allkeys-lru
+    ipAllowList:
+      - source: 0.0.0.0/0
+        description: allow all
 
 # ============================================================
 # Cách deploy:
