@@ -25,24 +25,24 @@ services:
         value: 3.11.0
       # Secrets — set qua Render Dashboard (không commit giá trị thật)
       - key: MOGO_URL
-        sync: false            # sync: false = set thủ công trên dashboard
+        sync: false           
       - key: MOGO_DB_NAME
         sync: false 
       - key: GOOGLE_CLIENT_SECRET
         sync: false 
-        - key: BREVO_API_KEY
+      - key: BREVO_API_KEY
         sync: false 
-        - key: GOOGLE_CLIENT_ID
+      - key: GOOGLE_CLIENT_ID
         sync: false 
-        - key: SECRET_KEY
+      - key: SECRET_KEY
         sync: false 
-        - key: API_KEY
+      - key: API_KEY
         sync: false 
-        - key: API_SECRET
+      - key: API_SECRET
         sync: false 
-        - key: CLOUD_NAME
+      - key: CLOUD_NAME
         sync: false 
-        - key: REDIS_URL
+      - key: REDIS_URL
         sync: false 
     # Disk (nếu agent cần lưu file)
     # disk:
