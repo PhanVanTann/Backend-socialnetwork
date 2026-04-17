@@ -11,7 +11,7 @@ class Middleware:
             ("/users/", ["POST"]),
             ("/auth/refresh-token/",None),
             ("/auth/googleLogin/",None),
-            ("/auth/verifyEmail/",None)
+            ("/auth/verifyEmail/",None),
             ("/auth/health/",None)
         ]
               
