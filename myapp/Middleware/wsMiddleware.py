@@ -8,6 +8,7 @@ from channels.middleware import BaseMiddleware
 
 def _get_cookie(headers: dict, name: str) -> str | None:
     raw = headers.get(b"cookie")
+    print(f"Raw cookie header: {raw}")
     if not raw:
         return None
     try:
