@@ -171,6 +171,7 @@ CORS_ALLOW_ALL_ORIGINS = False  # KHÔNG dùng True nếu set CORS_ALLOWED_ORIGI
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000", 
      "https://socialnetwork-su0z.onrender.com",
+      "https://frontend-socialnetwork-pigq.onrender.com",
      "https://ai-agent-qb4o.onrender.com"
 ]
 CORS_ALLOW_HEADERS = [
