@@ -12,7 +12,7 @@ class Middleware:
             ("/auth/refresh-token/",None),
             ("/auth/googleLogin/",None),
             ("/auth/verifyEmail/",None),
-            ("/health", None)
+     
         ]
               
             self.rules_admin = {
