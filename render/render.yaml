@@ -13,7 +13,10 @@ services:
     name: ai-agent
     runtime: python
     region: singapore         # Chọn region gần user nhất
-    plan: free                # free | starter | standard | pro
+    plan: free    
+    ipAllowList:
+    - source: 0.0.0.0/0
+      description: allow all            
 
     buildCommand: pip install -r app/requirements.txt
     startCommand: ./myapp daphne -b 0.0.0.0 -p 8000 myapp.asgi:application
