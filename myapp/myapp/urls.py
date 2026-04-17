@@ -33,5 +33,4 @@ urlpatterns = [
     path('friend/',include(friend_urls.urlpatterns)),
     path('comment/',include(comment_urls.urlpatterns)),
     path('notifications/',include(notification_urls.urlpatterns)),
-    path('health/', lambda request: JsonResponse({"status": "ok"}), name='health_check'),
 ]
