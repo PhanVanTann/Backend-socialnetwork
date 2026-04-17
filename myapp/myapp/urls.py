@@ -23,6 +23,7 @@ from chat import urls as chat_urls
 from friend import urls as friend_urls
 from comments import urls as comment_urls
 from notifications import urls as notification_urls
+from django.http import JsonResponse
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include(auth_urls.urlpatterns)), 
@@ -32,4 +33,5 @@ urlpatterns = [
     path('friend/',include(friend_urls.urlpatterns)),
     path('comment/',include(comment_urls.urlpatterns)),
     path('notifications/',include(notification_urls.urlpatterns)),
+    path('health/', lambda request: JsonResponse({"status": "ok"}), name='health_check'),
 ]
